@@ -1,0 +1,78 @@
+.card-container {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px 0; /* Add vertical padding */
+}
+
+.card {
+    flex: 0 0 auto; /* Prevent flex items from growing */
+    width: calc(30% - 10px); /* Adjust width to make the cards smaller and adjust for margin */
+    margin: 0 5px; /* Add margin between cards */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding and border in the width */
+    height: 800px; /* Set the height of the card */
+    position: relative; /* Set position to relative for absolute positioning */
+    display: flex; /* Use flexbox for inner alignment */
+    flex-direction: column; /* Arrange children vertically */
+}
+
+.card img {
+    width: 100%;
+    height: auto; /* Adjust height of the image */
+    display: block;
+    border-bottom: 1px solid #ccc;
+}
+
+.card-content {
+    flex: 1; /* Expand to fill remaining space */
+    padding: 20px;
+    position: relative; /* Set position to relative for absolute positioning */
+    display: flex; /* Use flexbox for inner alignment */
+    flex-direction: column; /* Arrange children vertically */
+}
+
+.card-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Add margin for spacing */
+    position: relative; /* Set position to relative for absolute positioning */
+    z-index: 1; /* Ensure text appears above pseudo-element */
+}
+
+.card-content h3::before {
+    content: ''; /* Add pseudo-element */
+    position: absolute; /* Set position to absolute */
+    top: 0; /* Position from the top */
+    left: 0; /* Position from the left */
+    width: 100%; /* Cover entire width */
+    height: 100%; /* Cover entire height */
+    background-color: yellow; /* Set background color */
+    z-index: -1; /* Ensure background appears behind text */
+}
+
+.card-content p {
+    flex: 1; /* Expand to fill remaining space */
+    margin-bottom: 15px;
+    overflow: hidden; /* Hide overflow content */
+}
+
+.card-content button {
+    align-self: flex-start; /* Align button to the left side */
+    background-color: white; /* White background color */
+    color: black; /* Black text color */
+    border: 2px solid black; /* Black border */
+    padding: 8px 15px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add shadow */
+    font-weight: bold; /* Make text bold */
+}
+
+.card-content button:hover {
+    background-color: black; /* Black background color on hover */
+    color: white; /* White text color on hover */
+}
