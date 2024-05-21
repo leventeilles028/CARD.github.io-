@@ -1,37 +1,37 @@
-body
-{
+body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    transition: background-color 0.5s, color 0.5s;
 }
-nav
-{
+
+nav {
     width: 100%;
     background: #00316b;
 }
-ul
-{
+
+ul {
     width: 80%;
     margin: 0 auto;
     padding: 0;
 }
-ul li
-{
-    list-style: none;
-    display: inline-block;
-    padding: 20px;
-}
-ul li:hover
-{
-    background: #e91e63;
-}
-ul li a
-{
-    color: #fff;
-    text-decoration: none;
-}
-.toggle
-{
+
+    ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 20px;
+    }
+
+        ul li:hover {
+            background: #e91e63;
+        }
+
+        ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+.toggle {
     width: 100%;
     padding: 10px 20px;
     background: #001f44;
@@ -41,106 +41,125 @@ ul li a
     font-size: 30px;
     display: none;
 }
-@media (max-width:768px)
-{
-    .toggle
-    {
 
+.dark-mode-toggle {
+    text-align: center;
+    padding: 20px;
+}
+
+    .dark-mode-toggle button {
+        background-color: #222;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .dark-mode-toggle button:hover {
+            background-color: #444;
+        }
+
+@media (max-width:768px) {
+    .toggle {
         display: block;
     }
-    ul
-    {
+
+    ul {
         width: 100%;
         display: none;
     }
-    ul li
-    {
-        display: block;
-        text-align: center;
-    }
-    .active
-    {
+
+        ul li {
+            display: block;
+            text-align: center;
+        }
+
+    .active {
         display: block;
     }
 }
-
-
 
 .card-container {
     display: flex;
-    justify-content: center; /* Center the items horizontally */
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 20px 0; /* Add vertical padding */
+    justify-content: center;
+    overflow-x: auto;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
 .card {
-    flex: 0 0 auto; /* Prevent flex items from growing */
-    width: calc(30% - 10px); /* Adjust width to make the cards smaller and adjust for margin */
-    margin: 0 5px; /* Add margin between cards */
+    flex: 0 0 auto;
+    width: calc(30% - 10px);
+    margin: 0 5px;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Include padding and border in the width */
-    height: 800px; /* Set the height of the card */
-    position: relative; /* Set position to relative for absolute positioning */
-    display: flex; /* Use flexbox for inner alignment */
-    flex-direction: column; /* Arrange children vertically */
+    box-sizing: border-box;
+    height: 800px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.card img {
-    width: 100%;
-    height: auto; /* Adjust height of the image */
-    display: block;
-    border-bottom: 1px solid #ccc;
-}
+    .card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-bottom: 1px solid #ccc;
+    }
 
 .card-content {
-    flex: 1; /* Expand to fill remaining space */
+    flex: 1;
     padding: 20px;
-    position: relative; /* Set position to relative for absolute positioning */
-    display: flex; /* Use flexbox for inner alignment */
-    flex-direction: column; /* Arrange children vertically */
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.card-content h3 {
-    margin-top: 0;
-    margin-bottom: 10px; /* Add margin for spacing */
-    position: relative; /* Set position to relative for absolute positioning */
-    z-index: 1; /* Ensure text appears above pseudo-element */
-}
+    .card-content h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+    }
 
-.card-content h3::before {
-    content: ''; /* Add pseudo-element */
-    position: absolute; /* Set position to absolute */
-    top: 0; /* Position from the top */
-    left: 0; /* Position from the left */
-    width: 100%; /* Cover entire width */
-    height: 100%; /* Cover entire height */
-    background-color: yellow; /* Set background color */
-    z-index: -1; /* Ensure background appears behind text */
-}
+        .card-content h3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+            z-index: -1;
+        }
 
-.card-content p {
-    flex: 1; /* Expand to fill remaining space */
-    margin-bottom: 15px;
-    overflow: hidden; /* Hide overflow content */
-}
+    .card-content p {
+        flex: 1;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
 
-.card-content button {
-    align-self: flex-start; /* Align button to the left side */
-    background-color: white; /* White background color */
-    color: black; /* Black text color */
-    border: 2px solid black; /* Black border */
-    padding: 8px 15px; /* Add padding */
-    border-radius: 5px; /* Add border radius */
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add shadow */
-    font-weight: bold; /* Make text bold */
-}
+    .card-content button {
+        align-self: flex-start;
+        background-color: white;
+        color: black;
+        border: 2px solid black;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        font-weight: bold;
+    }
 
-.card-content button:hover {
-    background-color: black; /* Black background color on hover */
-    color: white; /* White text color on hover */
+        .card-content button:hover {
+            background-color: black;
+            color: white;
+        }
+
+.dark-mode {
+    background-color: #222;
+    color: #fff;
 }
